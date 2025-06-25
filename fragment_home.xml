@@ -1,155 +1,311 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment">
 
-    <!-- Top Bar -->
-    <LinearLayout
-        android:id="@+id/top_bar"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@color/my_blue"
-        android:orientation="horizontal"
-        android:padding="16dp">
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/logo_no_bg" />
-
-        <TextView
-            android:id="@+id/greeting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="Dashboard"
-            android:textColor="@android:color/white"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <!-- Main Content -->
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="60dp"
-        android:padding="16dp">
-
+        <!-- Top Bar -->
         <LinearLayout
+            android:id="@+id/top_bar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingBottom="80dp">
+            android:layout_height="60dp"
+            android:background="@color/my_blue"
+            android:orientation="horizontal"
+            android:padding="16dp">
 
-            <!-- Wallet Section -->
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/logo_no_bg" />
+
             <TextView
+                android:id="@+id/greeting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Wallet"
+                android:layout_marginStart="16dp"
+                android:text="Dashboard"
+                android:textColor="@android:color/white"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="8dp"/>
+                android:textStyle="bold" />
+        </LinearLayout>
 
-            <!-- Cash & Card Boxes -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_marginBottom="16dp"
-                android:weightSum="2">
-
-                <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="100dp"
-                    android:background="@drawable/rounded_box"
-                    android:orientation="vertical"
-                    android:gravity="center">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Cash"
-                        android:textColor="@color/white"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="100dp"
-                    android:background="@drawable/rounded_box2"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:layout_marginStart="8dp">
-
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:src="@drawable/baseline_add_24"
-                        android:layout_gravity="end"
-                        android:layout_margin="8dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Add Card"
-                        android:textStyle="bold" />
-
-                   <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:gravity="center"
-                        android:hint="Amount"
-                        android:inputType="number"
-                        tools:ignore="TouchTargetSizeCheck" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <!-- Balance Overview -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Balance Overview"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="8dp"/>
+        <!-- Main Content -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="60dp"
+            android:padding="16dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingBottom="80dp">
 
-                <!-- Repeat for each balance item -->
+                <!-- Wallet Section -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Wallet"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Cash & Card Boxes -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:paddingVertical="4dp"
+                    android:gravity="center"
+                    android:layout_marginBottom="16dp"
                     android:weightSum="2">
 
-                    <TextView
+                    <LinearLayout
                         android:layout_weight="1"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:text="Opening Balance" />
+                        android:layout_height="100dp"
+                        android:background="@drawable/rounded_box"
+                        android:orientation="vertical"
+                        android:gravity="center">
 
-                    <TextView
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cash"
+                            android:textColor="@color/white"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_weight="1"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:text="R0.00"
-                        android:gravity="end" />
+                        android:layout_height="100dp"
+                        android:background="@drawable/rounded_box2"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_marginStart="8dp">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/baseline_add_24"
+                            android:layout_gravity="end"
+                            android:layout_margin="8dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Add Card"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:gravity="center"
+                            android:hint="Amount"
+                            android:inputType="number"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </LinearLayout>
                 </LinearLayout>
 
-                <!-- You can duplicate the layout above and change the labels to: -->
-                <!-- Ending Balance, Income, Expenses, Total -->
+                <!-- Balance Overview -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Balance Overview"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp"/>
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Planned Payments Section -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Planned Payments"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginBottom="8dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@drawable/rounded_box"
+                        android:padding="12dp">
+
+                        <!-- Sample Payment 1 -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingVertical="6dp"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Rent - Due in 5 days" />
+
+                            <TextView
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="R3,000"
+                                android:gravity="end"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <!-- Sample Payment 2 -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingVertical="6dp"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Netflix - Due in 3 days" />
+
+                            <TextView
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="R199"
+                                android:gravity="end"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                        <!-- Bill Tracker Section -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Upcoming Bills"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:layout_marginTop="24dp"
+                            android:layout_marginBottom="8dp"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:background="@drawable/rounded_box2"
+                            android:padding="12dp">
+
+                            <!-- Sample Bill 1 -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:paddingVertical="6dp"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Electricity - Due in 2 days" />
+
+                                <TextView
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="R400"
+                                    android:gravity="end"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <!-- Sample Bill 2 -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:paddingVertical="6dp"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="DSTV - Due in 5 days" />
+
+                                <TextView
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="R250"
+                                    android:gravity="end"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <!-- Manage Bills Button -->
+                            <Button
+                                android:id="@+id/btnManageBills"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="12dp"
+                                android:text="Manage Bills"
+                                android:textColor="@android:color/white"
+                                android:backgroundTint="@color/my_blue"
+                                android:paddingHorizontal="20dp"
+                                android:paddingVertical="8dp"/>
+                        </LinearLayout>
+
+                        <!-- View All Button -->
+                        <Button
+                            android:id="@+id/btnViewAllPlannedPayments"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="12dp"
+                            android:text="View All"
+                            android:textColor="@android:color/white"
+                            android:backgroundTint="@color/my_blue"
+                            android:paddingHorizontal="20dp"
+                            android:paddingVertical="8dp"/>
+                    </LinearLayout>
+
+
+                    <!-- Repeat for each balance item -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingVertical="4dp"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Opening Balance" />
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="R0.00"
+                            android:gravity="end" />
+                    </LinearLayout>
+
+                    <!-- You can duplicate the layout above and change the labels to: -->
+                    <!-- Ending Balance, Income, Expenses, Total -->
+
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
-    </ScrollView>
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+        </ScrollView>
+
+</FrameLayout>
+
